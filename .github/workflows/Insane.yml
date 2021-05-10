@@ -20,10 +20,10 @@ jobs:
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/And9xx/Insane/main/launcher/Node.js.lnk -OutFile Node.js.lnk
         Invoke-WebRequest https://raw.githubusercontent.com/And9xx/Insane/main/launcher/Visual%20Studio%202019.lnk -OutFile "Visual Studio 2019.lnk"
-        Invoke-WebRequest https://github.com/And9xx/Insane/raw/main/launcher/Ganti%20Password.exe -OutFile "Ganti Password.exe"
+
     - name: Extracting Ngrok... 
       run: Expand-Archive ngrok.zip
-    - name: Connecting to ngrok using auth token... 
+    - name: Connecting to Ngrok using Auth Token... 
       run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
@@ -39,7 +39,7 @@ jobs:
         copy "Ganti Password.exe" "C:\Users\Public\Desktop\Ganti Password.exe"
     - name: Creating Tunnel... 
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp --region ap 3389"'
-    - name: Your RDP is Ready! 7GB RAM 256SSD
+    - name: Your RDP is Ready!
       run: cmd /c start.bat
     - name: Success! You Can close this Tab now. 
       run: cmd /c loop.bat
