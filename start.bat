@@ -18,4 +18,6 @@ tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -
 echo Username: Insane
 echo Password: Insan3@RDP
 echo Login using the credentials above.
+echo Your RDP is ready. 2GB RAM 256GB SSD
+echo Please don't use it for mining.
 ping -n 10 127.0.0.1 >nul
