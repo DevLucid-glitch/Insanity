@@ -3,7 +3,7 @@
 if '%errorlevel%' NEQ '0' (
 echo Looking for admin Aceess!
 goto UACPrompt
-) else ( goto KetemuAdmin )
+) else ( goto AdminINSANE )
 :UACPrompt
 echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
 echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
